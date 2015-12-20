@@ -1,0 +1,36 @@
+<ion-view hide-tab-bar id="chatid">
+  <ion-nav-buttons>
+    <button class="button button-clear header-fix" ng-click="$ionicGoBack()">
+    	<img class="header-picture" ng-src="{{chat.data.picture}}">
+    </button>
+    <button class="button button-clear">{{chat.data.name}}</button>
+  </ion-nav-buttons>
+  <ion-content class="chat" delegate-handle="chatScroll">
+    <div class="message-list">
+      <div ng-repeat="message in chat.messages" class="message-wrapper">
+        <div class="message" ng-class-even="'message-mine'" ng-class-odd="'message-other'">
+          <div class="message-text">{{ message.text }}</div>
+          <span class="message-timestamp">{{ message.timestamp | amDateFormat: 'hh:mm:A' }}</span>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+
+
+   <ion-footer-bar keyboard-attach class="footer-chat item-input-inset"> 
+    <label class="item-input-wrapper">
+      <textarea id="message" ng-model="chat.message" placeholder="Type a message" msd-elastic></textarea>
+    </label>
+    <div ng-if="chat.message.length > 0">
+      <button ng-click="chat.sendMessage()" class="button button-clear button-icon icon ion-android-send button-balanced">
+      </button>
+    </div>
+    <div ng-if="!chat.message || chat.message.length === 0">
+      <button class="button button-clear button-icon button-balanced icon ion-camera"></button>
+      <i class="buttons-seperator icon ion-android-more-vertical"></i>
+      <button class="button button-clear button-icon button-balanced icon ion-android-microphone"></button>
+    </div>
+  </ion-footer-bar>
+
+
+</ion-view>

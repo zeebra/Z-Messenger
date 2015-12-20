@@ -1,0 +1,192 @@
+/* Hide Tab */
+
+.tabs-top .tab-nav {
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0.6, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0.6, 0.2, 1);
+  -webkit-transition-duration: 200ms;
+  transition-duration: 200ms;
+  -webkit-transition-property: all;
+  transition-property: all;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.tabs-top .slide-away {
+  transform: translate3d(0, -50px, 0);
+  -webkit-transform: translate3d(0, -50px, 0);
+}
+
+.tabs-bottom .tab-nav,
+.tab-nav {
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+  -webkit-transition-timing-function: cubic-bezier(0.36, 0.66, 0.04, 1);
+  transition-timing-function: cubic-bezier(0.36, 0.66, 0.04, 1);
+  -webkit-transition-property: all;
+  transition-property: all;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.tabs-bottom .slide-away,
+.slide-away {
+  transform: translate3d(0, 49px, 0);
+  -webkit-transform: translate3d(0, 49px, 0);
+}
+/* Navbar fix */
+
+.mynavbar{
+  height: 56px !important;
+}
+
+.bar .button.back-button {
+  margin-right: 0px !important;
+}
+.header-fix{
+  padding-left: 0px !important;
+  padding-right: 8px !important;
+}
+
+
+/*chat*/
+
+.last-message-timestamp {
+    position: absolute;
+    top: 16px;
+    right: 12px;
+    font-size: 14px;
+    color: #9A9898;
+}
+
+.header-picture {
+max-width: 34px;
+max-height: 34px;
+width: 100%;
+height: 100%;
+border-radius: 50%;
+margin-top: 5px;
+}
+ 
+.chat {
+  background-image: url(/chat-background.jpg);
+  background-color: #E0DAD6;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  bottom: 58px;
+}
+ 
+.message-list {
+  margin-top: 25px;
+  padding: 0 5%;
+}
+ 
+.message-wrapper {
+  margin-bottom: 9px;
+}
+
+.message-wrapper::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.message {
+  display: inline-block;
+  position: relative;
+  max-width: 236px;
+  border-radius: 7px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.message.message-mine {
+  float: right;
+  background-color: #DCF8C6;
+}
+
+.message.message-other {
+  float: left;
+  background-color: #FFF;
+}
+
+.message.message-other::before, .message.message-mine::before {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  width: 12px;
+  height: 19px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.message.message-other::before {
+  left: -11px;
+  background-image: url(/message-other.png);
+}
+
+.message.message-mine::before {
+  right: -11px;
+  background-image: url(/message-mine.png);
+}
+
+.message .message-text {
+  padding: 5px 7px;
+  word-wrap: break-word;
+}
+
+.message .message-text::after {
+  content: " \00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0";
+  display: inline;
+}
+
+.message .message-timestamp {
+  position: absolute;
+  bottom: 2px;
+  right: 7px;
+  color: gray;
+  font-size: 12px;
+}
+
+/*Footer text input*/
+.bar-footer {
+  overflow: visible !important;
+  height: auto;
+  border-radius: 7px;
+}
+
+.bar-footer textarea {
+  resize: none;
+  max-height: 180px;
+  width: 100%;
+  padding-top: 15px;
+}
+
+
+.footer-chat .item-input-wrapper {
+  background-color: #FFF;
+}
+
+.footer-chat .button.button-icon {
+  margin: 0 3px;
+}
+
+.footer-chat .buttons-seperator {
+  color: gray;
+  font-size: 18px;
+  line-height: 32px;
+}
+.item-input-inset {
+  padding: 5px !important;
+}
+.bar.item-input-inset .item-input-wrapper input {
+  height: 40px !important;
+}
+
+/*chats*//*I have no idea what am doing.. but it works :3*/
+.item-avatar > img:first-child, .item-avatar .item-image, .item-avatar .item-content > img:first-child, .item-avatar .item-content .item-image, .item-avatar-left > img:first-child, .item-avatar-left .item-image, .item-avatar-left .item-content > img:first-child, .item-avatar-left .item-content .item-image{
+  max-width: 51px;
+  max-height: 51px;
+  left: 10px;
+  top: 12px;
+}
+
