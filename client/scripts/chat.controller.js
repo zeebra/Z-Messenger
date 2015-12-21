@@ -1,7 +1,8 @@
 angular.module('zeebra').controller('ChatCtrl', ChatCtrl);
  
-function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeout) {
+function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeout, $ionicPopover) {
   $reactive(this).attach($scope);
+  var popover;
 
   window.addEventListener('native.keyboardhide', autoScroll);
   window.addEventListener('native.keyboardshow', autoScroll);
@@ -13,7 +14,7 @@ function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeo
   let chatId = $stateParams.chatId;
 
   this.sendMessage = sendMessage;
-  
+  this.showPopover = showPopover;
   
   this.helpers({
     data() {
@@ -23,6 +24,8 @@ function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeo
       return Messages.find({ chatId: chatId });
     }
   });
+
+
 
   function sendMessage() {
     $timeout(function() {
@@ -45,5 +48,19 @@ function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeo
    
       $ionicScrollDelegate.$getByHandle('chatScroll').scrollBottom(true);
   }
+
+
+ $ionicPopover.fromTemplateUrl('templates/popover.html', {
+    scope: $scope
+  }).then(function(pop) {
+    popover = pop;
+  });
  
+
+
+function showPopover($event){
+  popover.show($event);
+}
+
+
 }

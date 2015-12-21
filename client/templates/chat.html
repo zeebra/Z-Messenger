@@ -1,9 +1,12 @@
 <ion-view hide-tab-bar id="chatid">
   <ion-nav-buttons>
     <button class="button button-clear header-fix" ng-click="$ionicGoBack()">
-    	<img class="header-picture" ng-src="{{chat.data.picture}}">
+      <img class="header-picture" ng-src="{{chat.data.picture}}">
     </button>
     <button class="button button-clear">{{chat.data.name}}</button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-android-more-vertical" ng-click="chat.showPopover($event)"></button>
   </ion-nav-buttons>
   <ion-content class="chat" delegate-handle="chatScroll">
     <div class="message-list">
@@ -31,6 +34,30 @@
       <button class="button button-clear button-icon button-balanced icon ion-android-microphone"></button>
     </div>
   </ion-footer-bar>
-
-
 </ion-view>
+
+
+
+<script id="templates/popover.html" type="text/ng-template">
+  <ion-popover-view>
+    <ion-content>
+      <div class="list">
+        <a class="item" href="http://learn.ionicframework.com/" target="_blank">
+          View Profile
+        </a>
+        <a class="item" href="http://ionicframework.com/docs/" target="_blank">
+          Chat Theme
+        </a>
+        <a class="item" href="http://showcase.ionicframework.com/" target="_blank">
+          Search
+        </a>
+        <a class="item" href="http://ionicframework.com/submit-issue/" target="_blank">
+          Clear Chat
+        </a>
+        <a class="item" href="https://github.com/driftyco/ionic" target="_blank">
+          Block
+        </a>
+      </div>
+    </ion-content>
+  </ion-popover-view>
+</script>
