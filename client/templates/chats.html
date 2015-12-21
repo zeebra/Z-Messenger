@@ -1,4 +1,7 @@
 <ion-view view-title="Zeebra">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-android-more-vertical" ng-click="chats.showPopover($event)"></button>
+  </ion-nav-buttons>
   <ion-content>
     <ion-list>
       <ion-item ng-repeat="chat in chats.data | orderBy:'-lastMessage.timestamp'" class="item-chat item-avatar" type="item-text-wrap" href="#/tab/chats/{{chat._id}}">
@@ -11,3 +14,27 @@
 
   </ion-content>
 </ion-view>
+
+<script id="templates/popover.html" type="text/ng-template">
+  <ion-popover-view>
+    <ion-content>
+      <div class="list">
+        <a class="item" href="http://learn.ionicframework.com/" target="_blank">
+          New Group
+        </a>
+        <a class="item" href="http://ionicframework.com/docs/" target="_blank">
+          New Broadcast
+        </a>
+        <a class="item" href="http://showcase.ionicframework.com/" target="_blank">
+          Starred Messages
+        </a>
+        <a class="item" href="http://ionicframework.com/submit-issue/" target="_blank">
+          Status
+        </a>
+        <a class="item" href="https://github.com/driftyco/ionic" target="_blank">
+          Settings
+        </a>
+      </div>
+    </ion-content>
+  </ion-popover-view>
+</script>
