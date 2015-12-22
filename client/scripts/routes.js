@@ -25,6 +25,17 @@ function config($stateProvider, $urlRouterProvider) {
         }
       }
     })
+
+    .state('tab.profile', {
+      url: '/profile/:chatId',
+      views: {
+        'tab-chats': {
+          templateUrl: 'client/templates/profile.html',
+          controller: 'ProfileCtrl as profile'
+        }
+      }
+    })
+
     .state('tab.feed', {
       url: '/feed',
       views: {
