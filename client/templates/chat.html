@@ -6,7 +6,7 @@
     <button class="button button-clear">{{chat.data.name}}</button>
   </ion-nav-buttons>
   <ion-nav-buttons side="right">
-    <button class="button button-icon icon ion-android-more-vertical" ng-click="chat.showPopover($event)"></button>
+    <button class="button button-icon icon ion-android-more-vertical" ng-click="popover.show($event)"></button>
   </ion-nav-buttons>
   <ion-content class="chat" delegate-handle="chatScroll">
     <div class="message-list">
@@ -38,23 +38,23 @@
 
 
 
-<script id="templates/popover.html" type="text/ng-template">
+<script id="templates/chat.popover.html" type="text/ng-template">
   <ion-popover-view>
     <ion-content>
       <div class="list">
-        <a class="item" href="#/tab/profile/{{profile._id}}">
+        <a class="item" ng-click ="chat.profile()">
           View Profile
         </a>
-        <a class="item" href="http://ionicframework.com/docs/" target="_blank">
+        <a class="item" ng-click="chat.theme()">
           Chat Theme
         </a>
-        <a class="item" href="http://showcase.ionicframework.com/" target="_blank">
+        <a class="item" ng-click ="chat.search()">
           Search
         </a>
-        <a class="item" href="http://ionicframework.com/submit-issue/" target="_blank">
+        <a class="item" ng-click ="chat.clear()">
           Clear Chat
         </a>
-        <a class="item" href="https://github.com/driftyco/ionic" target="_blank">
+        <a class="item" ng-click ="chat.block()">
           Block
         </a>
       </div>

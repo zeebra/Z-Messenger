@@ -1,8 +1,7 @@
 angular.module('zeebra').controller('ChatCtrl', ChatCtrl);
  
-function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeout, $ionicPopover) {
+function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeout, $ionicPopover, $state) {
   $reactive(this).attach($scope);
-  var popover;
 
   window.addEventListener('native.keyboardhide', autoScroll);
   window.addEventListener('native.keyboardshow', autoScroll);
@@ -14,7 +13,6 @@ function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeo
   let chatId = $stateParams.chatId;
 
   this.sendMessage = sendMessage;
-  this.showPopover = showPopover;
   
   this.helpers({
     data() {
@@ -24,6 +22,13 @@ function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeo
       return Messages.find({ chatId: chatId });
     }
   });
+
+  //popever function callbacks
+  this.profile = profile;
+  this.theme = theme;
+  this.search = search
+  this.clear = clear;
+  this.block = block;
 
 
 
@@ -50,17 +55,35 @@ function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeo
   }
 
 
- $ionicPopover.fromTemplateUrl('templates/popover.html', {
-    scope: $scope
-  }).then(function(pop) {
-    popover = pop;
+$ionicPopover.fromTemplateUrl('templates/chat.popover.html', {
+    scope: $scope,
+  }).then(function(popover) {
+    $scope.popover = popover; //tried respecting the scope
+    //this.popever = popever;// not works
   });
- 
 
+  //popever handlers
 
-function showPopover($event){
-  popover.show($event);
-}
+  function profile(){
+    console.log('profile');
+    $scope.popover.hide();
+    $state.go('tab.profile');
+  }
 
+  function theme(){
+    console.log('theme');
+  }
+
+  function search(){
+    console.log('search'); 
+  }
+
+  function clear(){
+    console.log('clear');
+  }
+
+  function block(){
+    console.log('block');
+  }
 
 }

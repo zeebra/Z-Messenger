@@ -9,7 +9,7 @@ function ChatsCtrl ($scope, $reactive, $ionicPopover){
     }
   });
 
-  $ionicPopover.fromTemplateUrl('templates/popover.html', {
+  $ionicPopover.fromTemplateUrl('templates/chats.popover.html', {
     scope: $scope
   }).then(function(pop) {
     popover = pop;
