@@ -10,7 +10,7 @@ function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeo
       $ionicScrollDelegate.$getByHandle('chatScroll').scrollBottom(true);
     });
   
-  let chatId = $stateParams.chatId;
+  var chatId = $stateParams.chatId;
 
   this.sendMessage = sendMessage;
   
@@ -65,9 +65,8 @@ $ionicPopover.fromTemplateUrl('templates/chat.popover.html', {
   //popever handlers
 
   function profile(){
-    console.log('profile');
     $scope.popover.hide();
-    $state.go('tab.profile');
+    $state.go('profile',{profileId:chatId});
   }
 
   function theme(){

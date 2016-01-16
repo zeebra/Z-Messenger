@@ -16,24 +16,17 @@ function config($stateProvider, $urlRouterProvider) {
         }
       }
     })
-    .state('tab.chat', {
+    .state('chat', {
       url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'client/templates/chat.html',
-          controller: 'ChatCtrl as chat'
-        }
-      }
+      templateUrl: 'client/templates/chat.html',
+      controller: 'ChatCtrl as chat'
     })
 
-    .state('tab.profile', {
-      url: '/profile/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'client/templates/profile.html',
-          controller: 'ProfileCtrl as profile'
-        }
-      }
+
+    .state('profile', {
+      url: '/profile/:profileId',
+      templateUrl: 'client/templates/profile.html',
+      controller: 'ProfileCtrl as profile'
     })
 
     .state('tab.feed', {
