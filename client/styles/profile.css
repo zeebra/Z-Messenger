@@ -1,0 +1,30 @@
+.profile-container {
+    margin: 0px auto;
+    margin-top: 6vh;
+    text-align: center;
+}
+
+.user-image-container {
+    width: 46vw;
+}
+
+.rounded-image {
+    border-radius: 50%;
+}
+
+
+.user-image {
+    border-top: 1px solid #444444;
+    padding: 8px;
+    background-color: #FFFFFF;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.user-name {
+    font-size: 20px;
+}
+
+.user-phone {
+    margin-top: 5px;
+}

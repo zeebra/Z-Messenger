@@ -1,4 +1,4 @@
-angular.module('zeebra', ['angular-meteor', 'ionic', 'angularMoment', 'monospaced.elastic', 'ionic.ion.headerShrink']);
+angular.module('zeebra', ['angular-meteor', 'ionic', 'angularMoment', 'monospaced.elastic']);
  
 if (Meteor.isCordova) {
   angular.element(document).on('deviceready', onReady);
